@@ -16,7 +16,8 @@ spring:
       WRITE_DATES_AS_TIMESTAMPS: false
     time-zone: "Europe/Istanbul"
 
-
+springdoc:
+  pathsToMatch:"/api.*"
 
 app:
   jwtSecret: dummySeretKeyPutRealComplexSecretKeyHere

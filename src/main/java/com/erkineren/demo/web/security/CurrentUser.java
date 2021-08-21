@@ -1,5 +1,6 @@
 package com.erkineren.demo.web.security;
 
+import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 import java.lang.annotation.*;
@@ -8,5 +9,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @AuthenticationPrincipal
+@Parameter(hidden = true)
 public @interface CurrentUser {
 }

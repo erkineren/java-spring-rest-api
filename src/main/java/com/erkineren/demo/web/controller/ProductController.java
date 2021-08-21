@@ -14,6 +14,7 @@ import com.erkineren.demo.web.payload.response.ApiResponse;
 import com.erkineren.demo.web.payload.response.PagedResponse;
 import com.erkineren.demo.web.security.CurrentUser;
 import com.erkineren.demo.web.security.UserPrincipal;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +30,7 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Tag(name = "Product", description = "Product Controller")
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
@@ -44,10 +46,11 @@ public class ProductController {
     @Autowired
     ModelMapper modelMapper;
 
+    @Tag(name = "", description = "")
     @GetMapping
     public ResponseEntity<PagedResponse<ProductDto>> search(
             @CurrentUser UserPrincipal currentUser,
-            SearchableAndSortableRequest searchableAndSortableRequest) {
+            @RequestParam SearchableAndSortableRequest searchableAndSortableRequest) {
 
         List<SearchCriteria> params = searchableAndSortableRequest.prepareSearchCriteriaList();
         if (!currentUser.getAuthorities()
@@ -96,7 +99,7 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<ProductDto> add(
-            @Valid @RequestBody ProductDto productDto,
+            @Valid ProductDto productDto,
             @CurrentUser UserPrincipal currentUser) {
 
         Product newProduct = productService.add(modelMapper.map(productDto, Product.class), currentUser);
@@ -114,7 +117,7 @@ public class ProductController {
     @PutMapping("/{id}")
     public ResponseEntity<ProductDto> update(
             @PathVariable(name = "id") Long id,
-            @Valid @RequestBody ProductRequest productRequest,
+            @Valid ProductRequest productRequest,
             @CurrentUser UserPrincipal currentUser) {
 
         Product product = productService.update(id, modelMapper.map(productRequest, Product.class), currentUser);

@@ -9,6 +9,7 @@ import com.erkineren.demo.web.payload.request.LoginRequest;
 import com.erkineren.demo.web.payload.request.SignUpRequest;
 import com.erkineren.demo.persistence.repository.UserRepository;
 import com.erkineren.demo.web.security.JwtTokenProvider;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 
+@Tag(name = "Auth", description = "Auth Controller")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
