@@ -32,5 +32,5 @@ public class ProductRequest {
     @NotNull
     private int stock;
 
-    private List<ProductImageDto> productImageList;
+    private List<ProductImageDto> images;
 }

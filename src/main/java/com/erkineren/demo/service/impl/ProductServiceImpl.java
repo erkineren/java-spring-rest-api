@@ -75,6 +75,12 @@ public class ProductServiceImpl extends SearchableEntityService<Product> {
                 .setStock(newProduct.getStock())
         ;
 
+        if (product.getImages() != null && product.getImages().size() > 0) {
+            product.getImages().forEach((im) -> {
+                im.setProduct(product);
+            });
+        }
+
         return productRepository.save(product);
     }
 
