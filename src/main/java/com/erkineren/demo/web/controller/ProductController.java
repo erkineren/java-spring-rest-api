@@ -5,7 +5,7 @@ import com.erkineren.demo.persistence.model.entity.Product;
 import com.erkineren.demo.persistence.model.entity.User;
 import com.erkineren.demo.persistence.specification.SearchCriteria;
 import com.erkineren.demo.service.impl.ProductImageService;
-import com.erkineren.demo.service.impl.ProductServiceImpl;
+import com.erkineren.demo.service.impl.ProductService;
 import com.erkineren.demo.web.payload.request.ProductApprovalStatusRequest;
 import com.erkineren.demo.web.payload.request.ProductRequest;
 import com.erkineren.demo.web.payload.request.ProductStatusRequest;
@@ -38,7 +38,7 @@ public class ProductController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
-    private ProductServiceImpl productService;
+    private ProductService productService;
 
     @Autowired
     private ProductImageService productImageService;

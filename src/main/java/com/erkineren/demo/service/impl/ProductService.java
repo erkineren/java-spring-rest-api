@@ -19,7 +19,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductServiceImpl extends SearchableEntityService<Product> {
+public class ProductService extends SearchableEntityService<Product> {
 
     @Autowired
     private ProductRepository productRepository;
