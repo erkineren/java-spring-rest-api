@@ -1,7 +1,7 @@
 spring:
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgres://hvuchunwxvwjok:835399a06a9169d5dca163de6c7a783a25b6de82e75f2133b5330a105b8db97f@ec2-54-159-35-35.compute-1.amazonaws.com:5432/dcijnqa053saem&createDatabaseIfNotExist=true
+    url: jdbc:postgres://hvuchunwxvwjok:835399a06a9169d5dca163de6c7a783a25b6de82e75f2133b5330a105b8db97f@ec2-54-159-35-35.compute-1.amazonaws.com:5432/dcijnqa053saem?createDatabaseIfNotExist=true
   #    username: root
   #    password:
   jpa:
