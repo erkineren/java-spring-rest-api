@@ -86,9 +86,12 @@ public class DatabaseSeeder {
                         .setDescription("Description 1")
                         .setPrice(new BigDecimal("1.2"))
                         .setSupplier(new Supplier().setName("Supplier 1"))
+                        .setStock(12)
                         .setUser(user.orElse(null))
                         .setStatus(Product.Status.ACTIVE)
                         .setApprovalStatus(Product.ApprovalStatus.APPROVED)
+                        .addImage("https://cdn.hipicon.com/images/Products/2021/02/14/1613291108_1.jpeg&w=350&h=350")
+
                 );
                 add(new Product()
                         .setTitle("Product2")
@@ -96,8 +99,10 @@ public class DatabaseSeeder {
                         .setPrice(new BigDecimal("1.2"))
                         .setSupplier(new Supplier().setName("Supplier 1"))
                         .setUser(user.orElse(null))
+                        .setStock(1)
                         .setStatus(Product.Status.NOT_ACTIVE)
                         .setApprovalStatus(Product.ApprovalStatus.WAITING_REVIEW)
+                        .addImage("https://cdn.hipicon.com/images/Products/2021/07/06/1625556306_1.jpeg&w=350&h=350")
                 );
                 add(new Product()
                         .setTitle("Product3")
@@ -105,8 +110,10 @@ public class DatabaseSeeder {
                         .setPrice(new BigDecimal("1.2"))
                         .setSupplier(new Supplier().setName("Supplier 2"))
                         .setUser(user.orElse(null))
+                        .setStock(0)
                         .setStatus(Product.Status.NOT_ACTIVE)
                         .setApprovalStatus(Product.ApprovalStatus.REJECTED)
+                        .addImage("https://cdn.hipicon.com/images/Products/2018/05/21/1526916204_1.jpeg&w=350&h=350")
                 );
                 add(new Product()
                         .setTitle("Product4")
@@ -114,8 +121,10 @@ public class DatabaseSeeder {
                         .setPrice(new BigDecimal("1.2"))
                         .setSupplier(new Supplier().setName("Supplier 2"))
                         .setUser(user.orElse(null))
+                        .setStock(0)
                         .setStatus(Product.Status.NOT_ACTIVE)
                         .setApprovalStatus(Product.ApprovalStatus.APPROVED)
+                        .addImage("https://cdn.hipicon.com/images/Blog/2021/08/10/1628605408_1.jpeg")
                 );
 
             }

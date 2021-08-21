@@ -100,10 +100,10 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<ProductDto> add(
-            @Valid @RequestBody ProductDto productDto,
+            @Valid @RequestBody ProductRequest productRequest,
             @CurrentUser UserPrincipal currentUser) {
 
-        Product newProduct = productService.add(modelMapper.map(productDto, Product.class), currentUser);
+        Product newProduct = productService.add(modelMapper.map(productRequest, Product.class), currentUser);
 
 //        if (productDto.getImages() != null && productDto.getImages().size() > 0) {
 //            List<ProductImage> productImages = productDto.getImages().stream()

@@ -27,20 +27,20 @@ public class DemoApplication {
         return modelMapper;
     }
 
-    @Bean
-    public CorsFilter simpleCorsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
-        config.addAllowedOrigin("*");
-        config.setAllowedMethods(Collections.singletonList("*"));
-        config.setAllowedHeaders(Collections.singletonList("*"));
-        source.registerCorsConfiguration("/**", config);
-//        FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>();
-//        bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
-        return new CorsFilter(source);
-    }
+//    @Bean
+//    public CorsFilter simpleCorsFilter() {
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        CorsConfiguration config = new CorsConfiguration();
+//        config.setAllowCredentials(true);
+//        config.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+//        config.addAllowedOrigin("*");
+//        config.setAllowedMethods(Collections.singletonList("*"));
+//        config.setAllowedHeaders(Collections.singletonList("*"));
+//        source.registerCorsConfiguration("/**", config);
+////        FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>();
+////        bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+//        return new CorsFilter(source);
+//    }
 
 
 }

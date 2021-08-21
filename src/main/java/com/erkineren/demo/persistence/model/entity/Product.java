@@ -62,6 +62,15 @@ public class Product {
     })
     private List<ProductImage> images = new ArrayList<>();
 
+    public Product addImage(String url) {
+        images.add(
+                new ProductImage()
+                        .setProduct(this)
+                        .setUrl(url)
+        );
+        return this;
+    }
+
     public enum Status {
         ACTIVE, NOT_ACTIVE;
     }
