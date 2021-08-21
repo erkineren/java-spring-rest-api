@@ -49,7 +49,7 @@ public class Product {
 
     @Column(nullable = false)
     @Enumerated(EnumType.ORDINAL)
-    private Status status = Status.ACTIVE;
+    private Status status = Status.NOT_ACTIVE;
 
     @Column(nullable = false)
     @Enumerated(EnumType.ORDINAL)

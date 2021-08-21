@@ -50,7 +50,8 @@ public class ProductController {
     @GetMapping
     public ResponseEntity<PagedResponse<ProductDto>> search(
             @CurrentUser UserPrincipal currentUser,
-            @RequestParam SearchableAndSortableRequest searchableAndSortableRequest) {
+            SearchableAndSortableRequest searchableAndSortableRequest) {
+
 
         List<SearchCriteria> params = searchableAndSortableRequest.prepareSearchCriteriaList();
         if (!currentUser.getAuthorities()
@@ -99,7 +100,7 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<ProductDto> add(
-            @Valid ProductDto productDto,
+            @Valid @RequestBody ProductDto productDto,
             @CurrentUser UserPrincipal currentUser) {
 
         Product newProduct = productService.add(modelMapper.map(productDto, Product.class), currentUser);
@@ -117,7 +118,7 @@ public class ProductController {
     @PutMapping("/{id}")
     public ResponseEntity<ProductDto> update(
             @PathVariable(name = "id") Long id,
-            @Valid ProductRequest productRequest,
+            @Valid @RequestBody ProductRequest productRequest,
             @CurrentUser UserPrincipal currentUser) {
 
         Product product = productService.update(id, modelMapper.map(productRequest, Product.class), currentUser);

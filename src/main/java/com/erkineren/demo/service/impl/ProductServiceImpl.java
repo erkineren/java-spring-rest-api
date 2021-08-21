@@ -67,11 +67,12 @@ public class ProductServiceImpl extends SearchableEntityService<Product> {
             throw new UnauthorizedException(new ApiResponse(Boolean.FALSE, "You don't have permission"));
         }
 
-        product
+            product
                 .setTitle(newProduct.getTitle())
                 .setDescription(newProduct.getDescription())
                 .setPrice(newProduct.getPrice())
                 .setImages(newProduct.getImages())
+                .setStock(newProduct.getStock())
         ;
 
         return productRepository.save(product);

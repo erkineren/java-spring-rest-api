@@ -23,9 +23,9 @@ public class ProductDto {
 
     private String userId;
 
-    private Product.Status status;
+    private Product.Status status = Product.Status.NOT_ACTIVE;
 
-    private Product.ApprovalStatus approvalStatus;
+    private Product.ApprovalStatus approvalStatus = Product.ApprovalStatus.WAITING_REVIEW;
 
     private List<ProductImageDto> images;
 }
