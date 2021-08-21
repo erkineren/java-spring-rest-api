@@ -12,6 +12,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        jdbc:
+          lob:
+            non_contextual_creation=true:
   jackson:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
